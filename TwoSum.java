@@ -1,6 +1,5 @@
 import java.util.HashMap;
 
-
 public class TwoSum {
    
    /*
@@ -21,7 +20,6 @@ public class TwoSum {
         }
         return res;
    }
-    
     
    /*
     * O(nlogn)
