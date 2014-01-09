@@ -53,6 +53,8 @@ public class TwoSum {
 	public static void main(String []args){
 		int [] t = {3,2,4};
 		int [] res = twoSum2(t,6);
+		
+		
 		System.out.println(res[0] +" " + res[1]);
 	}
 	
