@@ -15,7 +15,7 @@ public class UniquePath {
     }
     
     /*
-     * DP Bottom-up tracking 
+     * DP Bottom-up approach, memoization 
      */
     public int uniquePaths2(int m, int n) {
         int [][] map = new int[m][n];
@@ -34,4 +34,9 @@ public class UniquePath {
         }
         return map[m-1][n-1];
     }
+    
+    /*
+     * Combinatorial solution: C(m+n-2, m-1) or C(m+n-2, n-1)
+     */
+     
 }
