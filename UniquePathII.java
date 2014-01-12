@@ -14,7 +14,7 @@ public class UniquePathII {
     }
     
     /*
-     * DP, Top-down approach
+     * DP, Top-down approach, memoization
      */
     public int pathsHelper(int m, int n, int[][] obstacleGrid){
         if(m<0||n<0||obstacleGrid[m][n]==1) return 0;
