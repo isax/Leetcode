@@ -1,6 +1,5 @@
 public class Subsets {
-	
-    public static ArrayList<ArrayList<Integer>> subsets(int[] S) {
+	public static ArrayList<ArrayList<Integer>> subsets(int[] S) {
 		if(S==null) return null;
 		
 		Arrays.sort(S);
