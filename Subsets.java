@@ -9,7 +9,7 @@ public class Subsets {
     }
 	
 	/*
-	 * Subsets of ArrayList which starts from 0 to index
+	 * Subsets of ArrayList which starts from 0 to index.
 	 */
 	public static ArrayList<ArrayList<Integer>> subsetsHelper(int []S, int index){
 				
