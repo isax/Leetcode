@@ -1,7 +1,6 @@
 public class Subsets {
     public static ArrayList<ArrayList<Integer>> subsets(int[] S) {     
-    	if(S==null) return null;
-        
+    if(S==null) return null;
         Arrays.sort(S);
         ArrayList<ArrayList<Integer>> res = subsetsHelper(S, S.length-1);
         return res;
@@ -11,7 +10,7 @@ public class Subsets {
      * Subsets of ArrayList which starts from 0 to index.
      */
     public static ArrayList<ArrayList<Integer>> subsetsHelper(int []S, int index){     
-    	ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+    ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         
         if(index<0) {
                 ArrayList<Integer>subset = new ArrayList<Integer>();
