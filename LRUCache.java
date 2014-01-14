@@ -57,7 +57,7 @@ public class LRUCache {
 	}
     
 	/*
-	 * set method
+	 * get method
 	 */
     public int get(int key) {
         if(!directory.containsKey(key)) 
