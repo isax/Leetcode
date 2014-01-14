@@ -1,6 +1,6 @@
 public class LRUCache {
-
-	Node head, tail;
+    
+    Node head, tail;
 	HashMap<Integer, Node> directory;
 	int capacity = 0;
 
@@ -10,10 +10,8 @@ public class LRUCache {
         head = null;
         tail = null;
     }
-    
-	/*
-	 * move used node to the end of the linked list
-	 */
+	
+	// move used node to the end of the linked list
 	public void moveNode(Node target){
 		if(target==tail) return; // tail: do nothing
 		
@@ -46,10 +44,7 @@ public class LRUCache {
 		}
 	}
 	
-	/*
-	 * remove head
-	 */
-	public void removeHead(){ 
+	public void removeHead(){ // remove head
 		if(head==null) return;
 		else if(head==tail){
 			head = null;
@@ -74,9 +69,6 @@ public class LRUCache {
         }
     }
     
-    /*
-	 * get method
-	 */
     public void set(int key, int value) {
         if(directory.containsKey(key)){
         	Node node = directory.get(key);
@@ -109,5 +101,3 @@ public class LRUCache {
     	}
     }
 }
-
-
