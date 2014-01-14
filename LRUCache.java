@@ -1,6 +1,6 @@
 public class LRUCache {
     
-    Node head, tail;
+  Node head, tail;
 	HashMap<Integer, Node> directory;
 	int capacity = 0;
 
@@ -9,7 +9,7 @@ public class LRUCache {
         directory = new HashMap<Integer, Node>();
         head = null;
         tail = null;
-    }
+  }
 	
 	// move used node to the end of the linked list
 	public void moveNode(Node target){
