@@ -10,7 +10,7 @@ public class LRUCache {
         head = null;
         tail = null;
     }
-	
+    
 	/*
 	 * move used node to the end of the linked list
 	 */
