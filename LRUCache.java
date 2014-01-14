@@ -31,7 +31,6 @@ public class LRUCache {
 			tail = target;
 		}	
 	}
-	
 	public void insertNode(Node target){
 		if(head==null) {
 			head = target;
