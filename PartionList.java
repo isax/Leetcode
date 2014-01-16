@@ -11,6 +11,49 @@
  */
 public class PartitionList {
 	
+	/*
+	 * If current node value < x, then cur = cur.next; 
+	 * if current node value >=x, then move this node to the end of the list.
+	 */
+	public static ListNode partitionBetter(ListNode head, int x){
+		if(head==null) return head;
+		ListNode right = head;
+		
+		int size = 1;
+		while(right.next!=null){
+			size++;
+			right = right.next;
+		}
+		
+		ListNode newHead = new ListNode(0); // add a new head
+		newHead.next = head;
+		head = newHead;
+
+		ListNode before = head;
+		ListNode cur = head.next;
+
+		
+		while(size>0){
+			if(cur.val>=x){
+				ListNode newNode = new ListNode(cur.val);
+				right.next = newNode;
+				right = newNode;
+				
+				before.next = cur.next;
+				cur = cur.next;
+			}			
+			else{
+				before = before.next;
+				cur = cur.next;
+			}
+			size--;
+			
+		}
+		return head.next;
+		
+	}
+  
+	
    public static ListNode partitionIntuitive(ListNode head, int x) {
 		ListNode firstStart = null;
 		ListNode firstEnd = null;
