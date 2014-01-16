@@ -53,7 +53,7 @@ public class PartitionList {
     } 
     
     /*
-     * Instable
+     * Instable. Cannot pass all test cases.
      */
     public static ListNode partition(ListNode head, int x) {
         if(head==null) return null;
