@@ -10,6 +10,7 @@
  * }
  */
 public class PartitionList {
+	
    public static ListNode partitionIntuitive(ListNode head, int x) {
 		ListNode firstStart = null;
 		ListNode firstEnd = null;
@@ -50,4 +51,28 @@ public class PartitionList {
 		return firstStart;  
         
     } 
+    
+    /*
+	 * Instable
+	 */
+	public static ListNode partition(ListNode head, int x) {
+        if(head==null) return null;
+        ListNode left = head;
+        while(left!=null&&left.val<x) {
+        	left = left.next;
+        }
+        if(left==null||left.next==null) return head;
+        	
+        ListNode right = left.next;
+        while(right!=null){
+        	if(right.val<x) {
+        		int temp = left.val;
+        		left.val = right.val;
+        		right.val = temp;
+        		left = left.next;
+        	}
+        	right = right.next;	
+        }
+        return head;
+    }
 }
