@@ -53,9 +53,9 @@ public class PartitionList {
     } 
     
     /*
-	 * Instable
-	 */
-	public static ListNode partition(ListNode head, int x) {
+     * Instable
+     */
+    public static ListNode partition(ListNode head, int x) {
         if(head==null) return null;
         ListNode left = head;
         while(left!=null&&left.val<x) {
