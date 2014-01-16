@@ -1,7 +1,7 @@
 public class Merge2SortedArrays {
 	
 	public static void merge(int A[], int m, int B[], int n) {
-    if(A==null||B==null) return;
+      if(A==null||B==null) return;
 		
 		int indexLast = m + n - 1;
 		int lastA = m-1;
