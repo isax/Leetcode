@@ -1,6 +1,6 @@
 public class Power {
 	
-	  public double pow(double x, int n) {
+    public double pow(double x, int n) {
         if(n<0) return 1/power(x, -n);
         return power(x, n);
     }
