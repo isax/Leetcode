@@ -17,8 +17,8 @@ public class Search2DMatrix {
 	}
 
     /*
-     * Saw this implementation on Leetcode. The matrix can be viewed as a one-dimensional sorted array. 
-     * http://oj.leetcode.com/discuss/249/search-a-2d-matrix
+     * Another implementation on Leetcode. The matrix can be viewed as a one-dimensional sorted array. 
+     * Link: http://oj.leetcode.com/discuss/249/search-a-2d-matrix
      * O(log(MN)) = O(logM + logN)
      */
     public boolean searchMatrix2(int[][] matrix, int target) {
