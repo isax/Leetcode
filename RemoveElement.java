@@ -1,7 +1,7 @@
 public class RemoveElement {
 
 	/*
-	 * two pointers, one starts from left, the other one starts from right.
+	 * Two pointers, one starts from left, the other one starts from right.
 	 */
 	public int removeElement(int[] A, int elem) {
             if(A==null||A.length == 0) return 0;
@@ -30,7 +30,7 @@ public class RemoveElement {
         }
 	
 	/*
-	 * Both pointers start from 0. Similar to 2.4 Partition List
+	 * Both pointers start from 0. Similar to 2.4 Partition List.
 	 */
 	public int removeElementCleaner(int[] A, int elem) {
 
