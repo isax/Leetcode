@@ -38,12 +38,12 @@ public class RemoveElement {
 		int l = 0;
 		int r = 0;
 		while(r<A.length){
-        	if(A[r]!=elem){
-        		A[l] = A[r];
-        		l++;
-        	}
-        	r++;
-        }
-        return l;
+			if(A[r]!=elem){
+				A[l] = A[r];
+				l++;
+			}
+			r++;
+		}
+		return l;
 	}
 }
