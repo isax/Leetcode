@@ -6,7 +6,7 @@ public class Solution {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         TreeNode head = root;// cannot be initialized to null, 
-                          //because first iteration need to check if(cur.right==head) e.g.{1, 2}
+                    //because first iteration needs to check if(cur.right==head) e.g.{1, 2} will return only{1}
         while(!stack.isEmpty()){
             TreeNode cur = stack.peek();
             if((cur.left==null&&cur.right==null)|| cur.right == head|| (cur.right==null&&cur.left==head)){
