@@ -1,6 +1,6 @@
 public class ValidateBST {
     public boolean isValidBST(TreeNode root) {
-        ArrayList<Integer>a = new ArrayList<Integer>();
+                ArrayList<Integer>a = new ArrayList<Integer>();
 		inorder(root, a);
 		
 		for(int i = 1; i<a.size(); i++){
