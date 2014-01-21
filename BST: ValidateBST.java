@@ -14,5 +14,25 @@ public class ValidateBST {
 		inorder(root.left, a);	
 		a.add(root.val);
 		inorder(root.right, a);	
-	}
+    }
+    
+ 
+    /*
+     * 34 / 54 test cases passed...Have no idea!!
+     */
+    static int lastCheck = Integer.MIN_VALUE;
+    public boolean isValidBST(TreeNode root) {
+                if(root==null) return true;
+		
+		if(!isValidBST(root.left)) return false;
+		
+		if(root.val<=lastCheck){
+		    lastCheck = root.val;
+			return false;
+		}
+		lastCheck = root.val;
+		if(!isValidBST(root.right)) return false;
+		
+		return true;
+    }
 }
