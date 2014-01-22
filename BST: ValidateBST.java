@@ -35,4 +35,34 @@ public class ValidateBST {
 		
 		return true;
     }
+    
+    /*
+     * Wrapper Class
+     */
+    
+    public static boolean checkBST3(TreeNode root, Wrapper wr){
+		if(root==null) return true;
+		
+		if(!checkBST3(root.left, wr)) return false;
+		
+		if(root.val<=wr.value){
+			return false;
+		}
+		wr.value = root.val;
+		if(!checkBST3(root.right, wr)) return false;
+		
+		return true;
+    }
+    
+    public boolean isValidBST(TreeNode root) {
+                Wrapper wr = new Wrapper(Integer.MIN_VALUE);
+		return checkBST3(root, wr);
+    }
+}
+
+class Wrapper{
+	int value;
+	Wrapper(int value){
+		this.value = value;
+	}
 }
