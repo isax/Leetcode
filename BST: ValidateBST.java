@@ -1,4 +1,7 @@
 public class ValidateBST {
+    /*
+     * Time: O(n) Space: O(n+logn) = O(n)
+     */
     public boolean isValidBST(TreeNode root) {
                 ArrayList<Integer>a = new ArrayList<Integer>();
 		inorder(root, a);
@@ -39,7 +42,6 @@ public class ValidateBST {
     /*
      * Wrapper Class
      */
-    
     public static boolean checkBST3(TreeNode root, Wrapper wr){
 		if(root==null) return true;
 		
@@ -53,11 +55,33 @@ public class ValidateBST {
 		
 		return true;
     }
-    
     public boolean isValidBST(TreeNode root) {
                 Wrapper wr = new Wrapper(Integer.MIN_VALUE);
 		return checkBST3(root, wr);
     }
+  
+    /*
+     * Min/Max Solution Time: O(n) Space: O(logn)
+     */
+    public static boolean checkMinMax(TreeNode root, int min, int max){
+		if(root==null) return true;
+		
+		if(root.val>=max||root.val<=min){
+			return false;
+		}
+		
+		if(!checkMinMax(root.left, min, root.val))
+			return false;
+		
+		if(!checkMinMax(root.right, root.val, max))
+			return false;
+		
+		return true;
+    }
+    public boolean isValidBST(TreeNode root) {
+        return checkMinMax(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+    
 }
 
 class Wrapper{
