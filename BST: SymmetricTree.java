@@ -16,7 +16,7 @@ public class SymmetricTree {
      *  In-order is not a solution for this problem.
      *  It will return true for unsymmetric test cases like this: {1,2,3,3,#,2,#}
      *  The res list is: -2147483648 3 -2147483648 2 -2147483648 1 -2147483648 2 -2147483648 3 -2147483648
-     * which is symmetric.
+     *  which is symmetric.
      */
      public static boolean isSymmetric(TreeNode root) {
         if(root==null) return true;
