@@ -20,8 +20,8 @@ public class NQueens {
         
         return res;	
     }
-    
-  public static char[] generateChar(int n){
+       
+       public static char[] generateChar(int n){
 		char[]array = new char[n];
 		for(int i = 0; i<n; i++){
 			array[i] = '.';
@@ -54,4 +54,6 @@ public class NQueens {
 		}
 		return true;
 	}
+    
+        
 }
