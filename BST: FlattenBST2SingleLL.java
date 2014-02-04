@@ -25,7 +25,7 @@ public class FlattenBST2SingleLL {
         if(rightSub!=null){
         	if(leftSub!=null){
         		leftSub.tail.right = rightSub.head;
-                //rightSub.head.left = leftSub.tail;
+                       //rightSub.head.left = leftSub.tail;
         	}else{
         		root.right = rightSub.head;
         		//rightSub.head.left = root;
