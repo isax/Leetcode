@@ -1,10 +1,8 @@
-public class FlattenBST2DLinkedList {
+public class FlattenBST2SingleLL {
     public void flatten(TreeNode root) {
         if(root==null) return;
-        if(root.val == 1&&root.left!=null&&root.right==null&&root.left.val ==2){
-            getNewNodes(root);
-        }
-        else helper2(root);
+
+        helper2(root);
   
     }
     
@@ -19,7 +17,7 @@ public class FlattenBST2DLinkedList {
         root.left =null;
         if(leftSub!=null){  	
             root.right = leftSub.head;
-            leftSub.head.left = root;
+            //leftSub.head.left = root;
             tail = leftSub.tail;
         }
 
@@ -27,10 +25,10 @@ public class FlattenBST2DLinkedList {
         if(rightSub!=null){
         	if(leftSub!=null){
         		leftSub.tail.right = rightSub.head;
-                        rightSub.head.left = leftSub.tail;
+                //rightSub.head.left = leftSub.tail;
         	}else{
         		root.right = rightSub.head;
-        		rightSub.head.left = root;
+        		//rightSub.head.left = root;
         	}   
         	tail = rightSub.tail;
         }
@@ -44,24 +42,28 @@ public class FlattenBST2DLinkedList {
         TreeNode l = root.left;
         TreeNode r = root.right;
         
-        root.left =null;
-        TreeNode leftSub = helper2(l);
+        
+        TreeNode leftSub= null;
         TreeNode leftTail = null;
-        if(leftSub!=null){
+        if(l!=null){
+            leftSub = helper2(l);
             leftTail = getTail(leftSub);
             root.right = leftSub;
-            leftSub.left = root;
+            //leftSub.left = root;
+            
         }
         
-        TreeNode rightSub = helper2(r);
-        if(rightSub!=null){
-            TreeNode rightTail = getTail(rightSub);
+        root.left =null;
+        
+        TreeNode rightSub= null;
+        if(r!=null){
+            rightSub = helper2(r);
             if(leftSub!=null){
                 leftTail.right = rightSub;
-                rightSub.left = leftTail;
+                //rightSub.left = leftTail;
             }else{
                 root.right = rightSub;
-                rightSub.left = root;
+                //rightSub.left = root;
             }
         }
         
