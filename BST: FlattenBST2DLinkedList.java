@@ -27,7 +27,7 @@ public class FlattenBST2DLinkedList {
         if(rightSub!=null){
         	if(leftSub!=null){
         		leftSub.tail.right = rightSub.head;
-                rightSub.head.left = leftSub.tail;
+                    rightSub.head.left = leftSub.tail;
         	}else{
         		root.right = rightSub.head;
         		rightSub.head.left = root;
