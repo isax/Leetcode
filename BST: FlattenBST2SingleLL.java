@@ -69,12 +69,70 @@ public class FlattenBST2SingleLL {
         
         return root;
     }
-    
     public static TreeNode getTail(TreeNode root){
         if(root==null) return null;
         while(root.right!=null){
             root = root.right;
         }
         return root;
+    }
+    
+    /*******************static variable***********************/
+    public static TreeNode lastVisited = null;
+    public static void helper3(TreeNode root){
+        if(root==null) {
+        	return;
+        }
+        
+        TreeNode r = root.right;
+        
+        if(lastVisited!=null){
+            lastVisited.right = root;
+            lastVisited.left = null;
+        }
+        lastVisited = root;
+        
+        helper3(root.left);
+        helper3(r); // have to save root.right, cos lastVisited.right = root.
+    }
+    
+    /*
+     * Use a Wrapper Class
+     */
+    public static void helper4(TreeNode root, Wrapper wr){
+        if(root==null) {
+        	return;
+        }
+        
+        TreeNode r = root.right;
+        
+        if(wr.lastVisited!=null){
+            wr.lastVisited.right = root;
+            wr.lastVisited.left = null;
+        }
+        wr.lastVisited = root;
+        
+        helper4(root.left, wr);
+        helper4(r, wr); // have to save root.right, cos lastVisited.right = root.
+    }
+    
+}
+
+class Wrapper{
+    TreeNode lastVisited = null;
+}
+
+class NodePair{
+    TreeNode head;
+    TreeNode tail;
+    
+    NodePair(TreeNode head, TreeNode tail){
+        this.head = head;
+        this.tail = tail;
+    }
+    
+    NodePair(){
+        head = null;
+        tail = null;
     }
 }
