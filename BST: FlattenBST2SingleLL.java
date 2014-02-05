@@ -141,6 +141,26 @@ public class FlattenBST2SingleLL {
   
     }
     
+    /******************* Iterative: O(nlogn) ***********************/
+    public void flatten(TreeNode root) {
+        if(root==null) return;
+        
+        while(root!=null){
+            if(root.left!=null){
+                TreeNode leftLast = root.left;
+                while(leftLast.right!=null){
+                    leftLast = leftLast.right;
+                }
+                
+                leftLast.right = root.right;
+                root.right = root.left;
+                root.left = null;
+            }
+            root = root.right;
+        }
+  
+    }
+    
 }
 
 class Wrapper{
