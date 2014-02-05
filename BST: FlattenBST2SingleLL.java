@@ -116,6 +116,7 @@ public class FlattenBST2SingleLL {
         helper4(r, wr); // have to save root.right, cos lastVisited.right = root.
     }
     
+    /******************* Iterative: DFS(Pre-order) ***********************/
     /******************* Stack ***********************/
     public void flattenStack(TreeNode root) {
         if(root==null) return;
