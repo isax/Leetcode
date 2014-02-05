@@ -116,6 +116,30 @@ public class FlattenBST2SingleLL {
         helper4(r, wr); // have to save root.right, cos lastVisited.right = root.
     }
     
+    /******************* Stack ***********************/
+    public void flattenStack(TreeNode root) {
+        if(root==null) return;
+        
+        Stack<TreeNode> st = new Stack<TreeNode>();
+        st.push(root);
+        TreeNode lastVisited = null;
+        while(!st.isEmpty()){
+            TreeNode node = st.pop();
+            if(lastVisited!=null){
+                lastVisited.left = null;
+                lastVisited.right = node;
+            }
+            if(node.right!=null){
+                st.push(node.right);
+            }
+            if(node.left!=null){
+                st.push(node.left);
+            }
+            lastVisited = node;
+        }
+  
+    }
+    
 }
 
 class Wrapper{
