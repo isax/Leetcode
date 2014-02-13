@@ -15,7 +15,6 @@ public class strStrSuffixTree {
     	String haystack = "abcabcd";
     	String needle = "bc";
     	System.out.println(strStr(haystack, needle));
-  	
     }
 }
 
@@ -47,12 +46,10 @@ class SuffixTreeNode{
         
         if(children.containsKey(str.charAt(0))){
             String substr = str.substring(1);
-            System.out.println(str.charAt(0) +"  containskey");
             children.get(str.charAt(0)).insert(substr, index);
         }else{
             SuffixTreeNode newChild = new SuffixTreeNode();
             children.put(str.charAt(0), newChild);
-            System.out.println(str.charAt(0) +"  new child");
             newChild.insert(str.substring(1), index);
         }
     }
