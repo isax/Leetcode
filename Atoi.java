@@ -42,5 +42,7 @@ public class Atoi {
     	System.out.println(atoi("-123"));
     	System.out.println(atoi("-123f"));
     	System.out.println(atoi("   -  "));
+    	System.out.println(atoi("   --1  "));
+    	System.out.println(atoi("   ++1  "));
     }
 }
