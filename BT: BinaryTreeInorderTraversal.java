@@ -1,4 +1,4 @@
-public class Solution {
+public class BinaryTreeInorderTraversal {
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         
         ArrayList<Integer> list = new ArrayList<Integer>();
