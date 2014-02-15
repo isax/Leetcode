@@ -7,8 +7,13 @@ public class SumRoot2LeafNumbers {
     }
     
     /*
-     * While searching deeper, add the values up (times 10 + current value), 
+     * Once we see this kind of problem, no matter what sum is required to output, 
+     * "all root-to-leaf" phrase reminds us the classic Tree Traversal or Depth-First-Search algorithm. 
+     * Then according to the specific problem, compute and store the values we need. Here in this problem, 
+     * while searching deeper, add the values up (times 10 + current value), 
      * and add the sum to final result if meet the leaf node (left and right child are both NULL).
+     *
+     * (Link：http://yucoding.blogspot.com/2013/05/leetcode-question-130-sum-root-to-leaf.html)
      */
     public int helper(TreeNode root, int sum){
         if(root==null) return 0;
