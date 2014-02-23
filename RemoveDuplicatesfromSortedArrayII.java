@@ -1,4 +1,4 @@
-public class Solution {
+public class RemoveDuplicatesfromSortedArrayII {
     public int removeDuplicates(int[] A) {
         if(A==null ||A.length==0) return 0;
         
