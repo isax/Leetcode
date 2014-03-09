@@ -1,4 +1,4 @@
-public class BinaryTreeLevelOrderTraversalII {
+public class BTLevelOrderTraversalII {
     public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         
