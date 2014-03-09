@@ -44,6 +44,6 @@ public class JumpGame {
            if(A[i]+i>canReach) canReach = A[i] + i;
            if(canReach>=length-1) return true;
         }
-        return (canReach>=length-1);
+        return false;
     }
 }
