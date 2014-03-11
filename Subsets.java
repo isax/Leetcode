@@ -32,6 +32,30 @@ public class Subsets {
     }
     
     /*
+     * Cleaner code, dfs + backtracking
+     */
+    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
+        
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        res.add(new ArrayList<Integer>());
+        Arrays.sort(S);
+        subsetsHelper(S, 0, list, res);
+        return res;
+    }
+	
+	public void subsetsHelper(int []S, int index, ArrayList<Integer>list, ArrayList<ArrayList<Integer>> res){
+	    if(index==S.length) return;
+	    
+	    for(int i = index; i<S.length; i++){
+	        list.add(S[i]);
+	        res.add((ArrayList)list.clone());
+	        subsetsHelper(S, i+1, list, res);
+	        list.remove(list.size()-1);
+	    }
+	}
+    
+    /*
      * My intuitive way of thinking: inefficient. Have to copy array every recursion. 
      */
     /*
