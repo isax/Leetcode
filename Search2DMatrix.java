@@ -40,5 +40,30 @@ public class Search2DMatrix {
     }
     
     
+    public boolean searchMatrix(int[][] matrix, int target) {
+        if(matrix==null || matrix.length==0 || matrix[0].length==0) 
+            return false;
+        int left = 0; int right = matrix.length-1;
+        
+        while(left<=right){
+            int mid = (left+right)/2;
+            if(target==matrix[mid][0]) return true;
+            else if(target<matrix[mid][0]) right = mid-1;
+            else left = mid+1;
+        }
+        if(right==-1) return false;
+        int row = right;
+        
+        left = 0; right = matrix[0].length-1;
+        while(left<=right){
+            int mid = (left+right)/2;
+            if(target==matrix[row][mid]) return true;
+            else if(target<matrix[row][mid]) right = mid-1;
+            else left = mid+1;
+        }
+        return false;
+    }
+    
+    
    
 }
